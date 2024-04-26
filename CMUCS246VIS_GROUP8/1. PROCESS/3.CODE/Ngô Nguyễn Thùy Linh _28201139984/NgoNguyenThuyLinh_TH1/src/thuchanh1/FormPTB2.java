@@ -42,7 +42,7 @@ public class FormPTB2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Tinh Phương Trình Bậc 2");
+        jLabel1.setText("Tính Phương Trình Bậc 2");
 
         jLabel2.setText("Số A");
 
