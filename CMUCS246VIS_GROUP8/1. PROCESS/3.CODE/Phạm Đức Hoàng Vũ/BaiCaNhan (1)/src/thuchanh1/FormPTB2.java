@@ -137,14 +137,16 @@ public class FormPTB2 extends javax.swing.JFrame {
         double c = Double.parseDouble(txtC.getText());
 
         double delta = b * b - 4 * a * c;
-
-        if (delta > 0) {
+        if (a==0){
+            lblResult.setText("khong phai phương trinh bac hai");
+        }
+        else if (delta > 0) {
             double x1 = (-b + Math.sqrt(delta)) / (2 * a);
             double x2 = (-b - Math.sqrt(delta)) / (2 * a);
-            lblResult.setText(a+"x^2"+b+"x"+c+"= 0 "+"   Phương trình có 2 nghiệm: x1 = " + x1 + ", x2 = " + x2);
+            lblResult.setText(a+"x^2"+(b>=0?"+":"")+b+"x"+(c>=0?"+":"")+c+"= 0 "+"   Phương trình có 2 nghiệm: x1 = " + x1 + ", x2 = " + x2);
         } else if (delta == 0) {
             double x = -b / (2 * a);
-            lblResult.setText(a+"x^2"+b+"x"+c+"= 0 "+"    Phương trình có 2 nghiệm:x = " + x);
+            lblResult.setText(a+"x^2"+(c>=0?"+":"")+c+"x"+(c>=0?"+":"")+c+"= 0 "+"    Phương trình có 1 nghiệm:x = " + x);
         } else {
             lblResult.setText("Phương trình vô nghiệm");
         }
