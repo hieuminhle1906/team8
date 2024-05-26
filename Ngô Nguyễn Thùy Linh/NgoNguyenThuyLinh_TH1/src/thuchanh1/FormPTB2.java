@@ -17,6 +17,7 @@ public class FormPTB2 extends javax.swing.JFrame {
      */
     public FormPTB2() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -83,14 +84,15 @@ public class FormPTB2 extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel4))
                         .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                            .addComponent(txtC)
-                            .addComponent(txtA)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                                .addComponent(txtA, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(txtC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
+                        .addGap(125, 125, 125)
                         .addComponent(jButton1)
-                        .addGap(77, 77, 77)
+                        .addGap(54, 54, 54)
                         .addComponent(jButton2))
                     .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -132,7 +134,9 @@ public class FormPTB2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        double a = Double.parseDouble(txtA.getText());
+       
+        try{
+             double a = Double.parseDouble(txtA.getText());
         double b = Double.parseDouble(txtB.getText());
         double c = Double.parseDouble(txtC.getText());
 
@@ -147,6 +151,10 @@ public class FormPTB2 extends javax.swing.JFrame {
             lblResult.setText(a+"x^2+ "+b+"x+ "+c+"= 0 "+"    Phương trình có 2 nghiệm:x = " + x);
         } else {
             lblResult.setText("Phương trình vô nghiệm");
+        }
+        }catch(Exception e){
+            lblResult.setForeground(Color.red);
+            lblResult.setText("Nhập dữ liệu sai");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
